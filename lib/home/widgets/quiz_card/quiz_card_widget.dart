@@ -4,6 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuizCardWidget extends StatelessWidget {
+  final String title;
+  final int questionsAnsweredAmount;
+  final int questionsTotal;
+
+  QuizCardWidget({
+    Key? key,
+    required this.title,
+    required this.questionsAnsweredAmount,
+    required this.questionsTotal,
+  });
+
+  get answeredPercentage =>
+      (questionsAnsweredAmount / questionsTotal).toDouble();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +39,7 @@ class QuizCardWidget extends StatelessWidget {
             height: 18,
           ),
           Text(
-            'Gerenciamento de Estado',
+            title,
             style: AppTextStyles.heading15,
           ),
           SizedBox(
@@ -36,14 +50,14 @@ class QuizCardWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Text(
-                  '3 de 10',
+                  '$questionsAnsweredAmount de $questionsTotal',
                   style: AppTextStyles.body11,
                 ),
               ),
               Expanded(
                   flex: 2,
                   child: ProgressIndicatorWidget(
-                    value: 0.6,
+                    value: answeredPercentage,
                   ))
             ],
           )
