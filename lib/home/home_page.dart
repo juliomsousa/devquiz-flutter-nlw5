@@ -1,3 +1,4 @@
+import 'package:DevQuiz/challenge/challenge_page.dart';
 import 'package:DevQuiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/home/home_state.dart';
@@ -90,6 +91,16 @@ class _HomePageState extends State<HomePage> {
                           title: e.title,
                           questionsAnsweredAmount: e.questionsAnswered,
                           questionsTotal: e.questions.length,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ChallengePage(
+                                  questions: e.questions,
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       )
                       .toList(),
