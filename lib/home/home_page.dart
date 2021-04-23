@@ -39,23 +39,43 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  LevelButtonWidget(
-                    label: 'Fácil',
-                  ),
-                  LevelButtonWidget(
-                    label: 'Médio',
-                  ),
-                  LevelButtonWidget(
-                    label: 'Difícil',
-                  ),
-                  LevelButtonWidget(
-                    label: 'Perito',
-                  ),
-                ],
+              Container(
+                height: 32,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    LevelButtonWidget(
+                      label: 'Fácil',
+                    ),
+                    LevelButtonWidget(
+                      label: 'Médio',
+                    ),
+                    LevelButtonWidget(
+                      label: 'Difícil',
+                    ),
+                    LevelButtonWidget(
+                      label: 'Perito',
+                    ),
+                  ],
+                ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     LevelButtonWidget(
+              //       label: 'Fácil',
+              //     ),
+              //     LevelButtonWidget(
+              //       label: 'Médio',
+              //     ),
+              //     LevelButtonWidget(
+              //       label: 'Difícil',
+              //     ),
+              //     LevelButtonWidget(
+              //       label: 'Perito',
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 24,
               ),
